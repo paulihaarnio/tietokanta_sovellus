@@ -1,7 +1,7 @@
 <?php
 
 include('../src/templates/head.php');
-echo "tere";
+echo "tietokantasovellus";
 
 
 include('../src/templates/foot.php');
