@@ -35,3 +35,7 @@ create table kappale(
     artisti VARCHAR(150),
     tuottaja VARCHAR(150)
 );
+
+
+/*ALTER TABLE tilaus
+ADD FOREIGN KEY (asiakasnro) REFERENCES as_tili(asiakasnro);*/
