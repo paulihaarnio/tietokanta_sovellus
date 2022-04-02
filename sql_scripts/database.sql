@@ -1,3 +1,7 @@
+drop database if EXISTS tietokantasovellus;
+CREATE database tietokantasovellus;
+use tietokantasovellus;
+
 drop if EXISTS artisti(
 )
 CREATE TABLE artisti(
