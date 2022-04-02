@@ -7,6 +7,8 @@ echo "<h1>Artistin lisäys</h1>";
     <input type="text" name="nimi"> <br>
     <label>Artistin syntymävuosi</label>
     <input type="text" name="svuosi"><br>
+    <label>Syntymämaa</label>
+    <input type="text" name="maa">    <br>
     <label>Artistin genre</label>
     <input type="text" name="genre">    
     <br><input type="submit" value="Lisää artisti">

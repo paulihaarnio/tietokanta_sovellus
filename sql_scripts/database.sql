@@ -37,5 +37,7 @@ create table kappale(
 );
 
 
-/*ALTER TABLE tilaus
-ADD FOREIGN KEY (asiakasnro) REFERENCES as_tili(asiakasnro);*/
+/*ALTER TABLE albumi
+ADD FOREIGN KEY (artisti) REFERENCES artisti(nimi);
+ADD FOREIGN KEY (tuottaja) REFERENCES tuottaja(nimi);
+*/
