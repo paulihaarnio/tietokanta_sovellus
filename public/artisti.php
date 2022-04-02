@@ -2,7 +2,7 @@
 include('../src/templates/head.php');
 echo "<h1>Artistin lisäys</h1>";
     echo'
-    <form action="http://localhost" method="post">
+    <form action="add_artisti.php" method="post">
     <label>Artistin nimi</label>
     <input type="text" name="nimi"> <br>
     <label>Artistin syntymävuosi</label>
