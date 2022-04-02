@@ -14,7 +14,7 @@ if( !isset($name) || !isset($year) || !isset($country) ){
 }
 
 //Tarkistetaan, ettei tyhjiä arvoja muuttujissa
-if( empty($name) || empty($year) || empty($genre)){
+if( empty($name) || empty($year) || empty($country)){
     echo "Et voi asettaa tyhjiä arvoja!!";
     exit;
 }
