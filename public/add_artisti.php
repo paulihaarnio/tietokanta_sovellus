@@ -27,7 +27,7 @@ try{
     $statement->bindParam(1, $name);
     $statement->bindParam(2, $year);
     $statement->bindParam(3, $country);
-    $statement->bindParam(3, $genre);
+    $statement->bindParam(4, $genre);
     
     $statement->execute();
 
