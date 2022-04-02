@@ -5,26 +5,28 @@ require '../src/modules/db.php'; // DB connection
 //Jos parametria ei löydy, funktio palauttaa null
 $name = filter_input(INPUT_POST, "nimi");
 $year = filter_input(INPUT_POST, "svuosi");
+$country = filter_input(INPUT_POST, "maa");
 $genre = filter_input(INPUT_POST, "genre");
 
 //Tarkistetaan onko muttujia asetettu
-if( !isset($name) || !isset($year) || !isset($genre) ){
+if( !isset($name) || !isset($year) || !isset($country) || !isset($genre) ){
     echo "Parametreja puuttui!! Ei voida lisätä artistia!";
     exit;
 }
 
 //Tarkistetaan, ettei tyhjiä arvoja muuttujissa
-if( empty($name) || empty($year) || empty($genre)){
+if( empty($name) || empty($year) || empty($country) || empty($genre)){
     echo "Et voi asettaa tyhjiä arvoja!!";
     exit;
 }
 
 try{
     //Suoritetaan parametrien lisääminen tietokantaan.
-    $sql = "INSERT INTO artisti (nimi, svuosi, genre) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO artisti (nimi, svuosi, maa, genre) VALUES (?, ?, ?, ?)";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(1, $name);
     $statement->bindParam(2, $year);
+    $statement->bindParam(3, $country);
     $statement->bindParam(3, $genre);
     
     $statement->execute();
