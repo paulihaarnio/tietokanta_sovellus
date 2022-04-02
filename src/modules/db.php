@@ -1,5 +1,5 @@
 <?php
-$init = parse_ini_file($_SERVER['DOCUMENT_ROOT']."/tietokantasovellus/conf.ini");
+$init = parse_ini_file($_SERVER['DOCUMENT_ROOT']."/tietokantasovellus/myconf.ini");
 $host = $init["host"];
 $db = $init["db"];
 $user = $init["username"];
