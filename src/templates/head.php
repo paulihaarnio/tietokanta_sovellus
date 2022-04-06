@@ -25,9 +25,6 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./albumi.php">Albumi</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./tuottaja.php">Tuottaja</a>
-            </li>
             
         </ul>
         </div>
