@@ -7,14 +7,6 @@ CREATE TABLE artisti(
     id int not null PRIMARY KEY auto_increment,
     nimi varchar(150),
     svuosi int(4),
-    maa varchar(150),
-    genre varchar(150)
-);
-drop TABLE if EXISTS tuottaja;
-CREATE TABLE tuottaja(
-    id int not null PRIMARY KEY auto_increment,
-    nimi varchar(150),
-    svuosi int(4),
     maa varchar(150)
 );
 drop TABLE if EXISTS albumi;
@@ -39,5 +31,4 @@ create table kappale(
 
 /*ALTER TABLE albumi
 ADD FOREIGN KEY (artisti) REFERENCES artisti(nimi);
-ADD FOREIGN KEY (tuottaja) REFERENCES tuottaja(nimi);
 */
