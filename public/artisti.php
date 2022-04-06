@@ -8,9 +8,7 @@ echo "<h1>Artistin lisäys</h1>";
     <label>Artistin syntymävuosi</label>
     <input type="text" name="svuosi"><br>
     <label>Syntymämaa</label>
-    <input type="text" name="maa">    <br>
-    <label>Artistin genre</label>
-    <input type="text" name="genre">    
+    <input type="text" name="maa">    <br>   
     <br><input type="submit" value="Lisää artisti">
     </form>';
 
