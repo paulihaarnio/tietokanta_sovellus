@@ -4,28 +4,38 @@ use tietokantasovellus;
 
 drop TABLE if EXISTS artisti;
 CREATE TABLE artisti(
-    id int not null PRIMARY KEY auto_increment,
-    nimi varchar(150),
+    artistiID int not null PRIMARY KEY auto_increment,
+    artistiNimi varchar(150),
     svuosi int(4),
     maa varchar(150)
 );
+drop table if EXISTS genre;
+create table genre(
+    genreID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    genreNimi VARCHAR(150)
+);
 drop TABLE if EXISTS albumi;
 CREATE TABLE albumi(
-    id int not null PRIMARY KEY auto_increment,
-    nimi varchar(150),
-    kappale VARCHAR(150),
+    albumiID int not null PRIMARY KEY auto_increment,
+    albumiNimi varchar(150),
     tekovuosi int(4),
-    genre varchar(150),
-    artisti VARCHAR(150),
+    genreID int(4),
+    artistiNimi VARCHAR(150),
     tuottaja VARCHAR(150)
 );
 drop table if EXISTS kappale;
 create table kappale(
-    id int not null PRIMARY KEY AUTO_INCREMENT,
-    nimi VARCHAR(150),
+    kappaleID int not null PRIMARY KEY AUTO_INCREMENT,
+    kappaleNimi VARCHAR(150),
     kesto time(6),
-    artisti VARCHAR(150),
-    tuottaja VARCHAR(150)
+    artistiNimi VARCHAR(150)
+);
+drop Table if EXISTS albumirivi;
+create Table albumirivi(
+    albumiID int not null,
+    rivinro int not null,
+    kappaleID int(4),
+    PRIMARY KEY (albumiID, rivinro)
 );
 
 
