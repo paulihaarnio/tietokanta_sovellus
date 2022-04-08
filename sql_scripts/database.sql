@@ -20,29 +20,30 @@ CREATE TABLE albumi(
     albumiNimi varchar(150),
     tekovuosi int(4),
     genreID int(4),
-    artistiNimi VARCHAR(150),
-    tuottaja VARCHAR(150),
-    FOREIGN KEY (artistiNimi) REFERENCES artisti(artistiNimi),
-    FOREIGN KEY (genreID) REFERENCES genre(genreID)
+    artistiID int(4),
+    tuottaja VARCHAR(150)
 );
 drop table if EXISTS kappale;
 create table kappale(
     kappaleID int not null PRIMARY KEY AUTO_INCREMENT,
     kappaleNimi VARCHAR(150),
     kesto time(6),
-    artistiNimi VARCHAR(150),
-    FOREIGN KEY (artistiNimi) REFERENCES artisti(artistiNimi)
+    artistiID int(4)
 );
 drop Table if EXISTS albumirivi;
 create Table albumirivi(
     albumiID int not null,
     rivinro int not null,
     kappaleID int(4),
-    PRIMARY KEY (albumiID, rivinro),
-    FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID)
+    PRIMARY KEY (albumiID, rivinro)
 );
 
 
-/*ALTER TABLE albumi
-ADD FOREIGN KEY (artisti) REFERENCES artisti(nimi);
-*/
+ALTER TABLE albumi
+ADD FOREIGN KEY (artistiID) REFERENCES artisti(artistiID);
+ALTER TABLE albumi
+ADD FOREIGN KEY (genreID) REFERENCES genre(genreID);
+ALTER TABLE kappale
+ADD FOREIGN KEY (artistiID) REFERENCES artisti(artistiID);
+ALTER TABLE albumirivi
+ADD FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID);
