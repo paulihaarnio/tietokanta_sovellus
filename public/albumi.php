@@ -6,7 +6,7 @@ echo "<h1>Albumin lisäys</h1>";
     <label>Albumin nimi</label>
     <input type="text" name="nimi"> <br>
     <label>Albumin tekovuosi</label>
-    <input type="text" name="svuosi"><br>
+    <input type="text" name="vuosi"><br>
     <label>Albumin genre</label>
     <input type="text" name="genre">  <br>
     <label>Albumin artisti</label>
