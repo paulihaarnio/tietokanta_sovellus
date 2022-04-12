@@ -1,5 +1,5 @@
 <?php
-require '../src/modules/db.php'; // DB connection
+require 'db.php'; // DB connection
 
 //Filtteroidaan POST-inputit (ei käytetä string-filtteriä, koska deprekoitunut)
 //Jos parametria ei löydy, funktio palauttaa null
