@@ -2,7 +2,7 @@
 include('../src/templates/head.php');
 echo "<h1>Kappaleen lisäys</h1>";
     echo'
-    <form action="http://localhost" method="post">
+    <form action="../src/modules/add_kappale.php" method="post">
     <label>Kappaleen nimi</label>
     <input type="text" name="kappaleNimi"> <br>
     <label>Kappaleen kesto</label>
