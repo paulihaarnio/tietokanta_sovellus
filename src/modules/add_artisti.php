@@ -20,6 +20,7 @@ if( empty($name) || empty($year) || empty($country)){
 }
 
 try{
+    $pdo = getPdoConnection();
     //Suoritetaan parametrien lisääminen tietokantaan.
     $sql = "INSERT INTO artisti (artistiNimi, svuosi, maa) VALUES (?, ?, ?)";
     $statement = $pdo->prepare($sql);

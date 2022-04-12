@@ -20,6 +20,7 @@ if( empty($name) || empty($time) || empty($artist)){
 }
 
 try{
+    $pdo = getPdoConnection();
     //Suoritetaan parametrien lisääminen tietokantaan.
     $sql = "INSERT INTO kappale (kappaleNimi, kesto, artistiNimi) VALUES (?, ?, ?)";
     $statement = $pdo->prepare($sql);

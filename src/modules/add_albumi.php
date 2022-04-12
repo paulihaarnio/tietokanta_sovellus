@@ -21,6 +21,7 @@ if( empty($name) || empty($year) || empty($artist) || empty($producer)){
 }
 
 try{
+    $pdo = getPdoConnection();
     //Suoritetaan parametrien lisääminen tietokantaan.
     $sql = "INSERT INTO albumi (albumiNimi, tekovuosi, artistiNimi, tuottaja) VALUES (?, ?, ?, ?)";
     $statement = $pdo->prepare($sql);
