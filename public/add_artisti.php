@@ -21,7 +21,7 @@ if( empty($name) || empty($year) || empty($country)){
 
 try{
     //Suoritetaan parametrien lisääminen tietokantaan.
-    $sql = "INSERT INTO artisti (nimi, svuosi, maa) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO artisti (artistiNimi, svuosi, maa) VALUES (?, ?, ?)";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(1, $name);
     $statement->bindParam(2, $year);
