@@ -25,7 +25,10 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./albumi.php">Albumi</a>
             </li>
-            
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./kappale.php">Kappale</a>
+            </li>
         </ul>
         </div>
     </div>
