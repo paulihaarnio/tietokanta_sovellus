@@ -19,7 +19,7 @@ include MODULES_DIR.'add_artisti.php';
 ?>
 
     <h1>Artistin lisäys</h1>
-    <form action="../src/modules/add_artisti.php" method="post">
+    <form action="artisti.php" method="post">
     <label>Artistin nimi</label>
     <input type="text" name="nimi"> <br>
     <label>Artistin syntymävuosi</label>

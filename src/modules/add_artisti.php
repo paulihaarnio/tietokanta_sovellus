@@ -38,8 +38,7 @@ function addArtist($name, $year, $country) {
         $statement->bindParam(3, $country);
         
         $statement->execute();
-
-        echo "Artisti ".$name." on lisätty tietokantaan"; 
+        
     }catch(PDOException $e){
         echo "Artistia ei voitu lisätä<br>";
         echo $e->getMessage();
