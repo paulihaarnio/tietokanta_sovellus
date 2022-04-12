@@ -1,9 +1,9 @@
 <?php
-require '../src/modules/db.php'; // DB connection
+require 'db.php'; // DB connection
 
 //Filtteroidaan POST-inputit (ei käytetä string-filtteriä, koska deprekoitunut)
 //Jos parametria ei löydy, funktio palauttaa null
-$name = filter_input(INPUT_POST, "nimi");
+$name = filter_input(INPUT_POST, "albumiNimi");
 $year = filter_input(INPUT_POST, "vuosi");
 $artist = filter_input(INPUT_POST, "artisti");
 $producer = filter_input(INPUT_POST, "tuottaja");
@@ -22,7 +22,7 @@ if( empty($name) || empty($year) || empty($artist) || empty($producer)){
 
 try{
     //Suoritetaan parametrien lisääminen tietokantaan.
-    $sql = "INSERT INTO albumi (nimi, vuosi, artistiNimi, tuottaja) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO albumi (albumiNimi, tekovuosi, artistiNimi, tuottaja) VALUES (?, ?, ?, ?)";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(1, $name);
     $statement->bindParam(2, $year);

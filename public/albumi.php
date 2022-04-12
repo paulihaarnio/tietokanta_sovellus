@@ -2,9 +2,9 @@
 include('../src/templates/head.php');
 echo "<h1>Albumin lisäys</h1>";
     echo'
-    <form action="http://localhost" method="post">
+    <form action="../src/modules/add_albumi.php" method="post">
     <label>Albumin nimi</label>
-    <input type="text" name="nimi"> <br>
+    <input type="text" name="albumiNimi"> <br>
     <label>Albumin tekovuosi</label>
     <input type="text" name="vuosi"><br>
     <label>Albumin genre</label>
