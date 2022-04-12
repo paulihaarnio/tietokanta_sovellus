@@ -8,7 +8,7 @@ echo "<h1>Kappaleen lisäys</h1>";
     <label>Kappaleen kesto</label>
     <input type="text" name="kesto"><br>
     <label>Artisti</label>
-    <input type="text" name="artisti">  <br>  
+    <input type="text" name="artistiNimi">  <br>  
     <input type="submit" value="Lisää kappale">
     </form>';
 
