@@ -16,7 +16,7 @@ include MODULES_DIR.'add_kappale.php';
 ?>
     <h1>Kappaleen lisäys</h1>
     
-    <form action="../src/modules/add_kappale.php" method="post">
+    <form action="kappale.php" method="post">
     <label>Artisti <?php createArtistDropdown($selectedID); ?></label> <br>
     <label>Kappaleen nimi</label>
     <input type="text" name="kappaleNimi"> <br>
