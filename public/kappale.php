@@ -20,15 +20,16 @@ include MODULES_DIR.'add_kappale.php';
     $selectedID = isset($artistID) ? $artistID : 0;
 
 ?>
-    <h1>Kappaleen lisäys</h1>
-    
-    <form action="kappale.php" method="post">
-    <label>Artisti <?php createArtistDropdown($selectedID); ?></label>
-    <label>Kappaleen nimi</label>
-    <input type="text" name="kappaleNimi">
-    <label>Kappaleen kesto</label>
-    <input type="text" name="kesto">
-    <input type="submit" value="Lisää kappale">
-    </form>
+    <div class="main-container">
+        <h1>Kappaleen lisäys</h1>
+        <form action="kappale.php" method="post">
+            <label class="dropdown">Artisti <?php createArtistDropdown($selectedID); ?></label>
+            <label>Kappaleen nimi</label>
+            <input type="text" name="kappaleNimi">
+            <label>Kappaleen kesto</label>
+            <input type="text" name="kesto">
+            <input type="submit" value="Lisää kappale">
+        </form>
+    </div>
 
 <?php include TEMPLATES_DIR.'foot.php'; ?>

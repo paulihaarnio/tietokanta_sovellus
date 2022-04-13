@@ -22,18 +22,19 @@ include MODULES_DIR.'add_albumi.php';
     $selectedID = isset($artistID) ? $artistID : 0;
     $selectedGenreID = isset($genreID) ? $genreID : 0;
 ?>
-
-    <h1>Albumin lisäys</h1>
-    <form action="albumi.php" method="post">
-    <label>Artisti <?php createArtistDropdown($selectedID); ?></label>
-    <label>Genre <?php createGenreDropdown($selectedGenreID); ?></label>
-    <label>Albumin nimi</label>
-    <input type="text" name="albumiNimi">
-    <label>Albumin tekovuosi</label>
-    <input type="text" name="vuosi">
-    <label>Albumin tuottaja</label>
-    <input type="text" name="tuottaja"> 
-    <input type="submit" value="Lisää albumi">
-    </form>
+    <div class="main-container">
+        <h1>Albumin lisäys</h1>
+        <form action="albumi.php" method="post">
+            <label class="dropdown">Artisti <?php createArtistDropdown($selectedID); ?></label>
+            <label class="dropdown">Genre <?php createGenreDropdown($selectedGenreID); ?></label>
+            <label>Albumin nimi</label>
+            <input type="text" name="albumiNimi">
+            <label>Albumin tekovuosi</label>
+            <input type="text" name="vuosi">
+            <label>Albumin tuottaja</label>
+            <input type="text" name="tuottaja"> 
+            <input type="submit" value="Lisää albumi">
+        </form>
+    </div>
 
 <?php include('../src/templates/foot.php'); ?>
