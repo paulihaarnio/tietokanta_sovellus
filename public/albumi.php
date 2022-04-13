@@ -10,7 +10,13 @@ include MODULES_DIR.'add_albumi.php';
     $producer = filter_input(INPUT_POST, "tuottaja");
 
     if(isset($artistID) || isset($genreID)) {
-        AddAlbum($artistID, $genreID, $albumName, $year, $producer);
+        try {
+            AddAlbum($artistID, $genreID, $albumName, $year, $producer);
+            echo '<div class="alert alert-success" role="alert">Albumi '.$albumName .' lisätty!</div>';
+        }catch(Exception $e) {
+            echo '<div class="alert alert-danger" role="alert">'.$e->getMessage().'</div>';
+        }
+        
     }
 
     $selectedID = isset($artistID) ? $artistID : 0;
@@ -20,7 +26,7 @@ include MODULES_DIR.'add_albumi.php';
     <h1>Albumin lisäys</h1>
     <form action="albumi.php" method="post">
     <label>Artisti <?php createArtistDropdown($selectedID); ?></label> <br>
-    <label>Artisti <?php createGenreDropdown($selectedGenreID); ?></label> <br>
+    <label>Genre <?php createGenreDropdown($selectedGenreID); ?></label> <br>
     <label>Albumin nimi</label>
     <input type="text" name="albumiNimi"> <br>
     <label>Albumin tekovuosi</label>

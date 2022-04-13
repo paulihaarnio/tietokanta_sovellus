@@ -27,8 +27,7 @@ function AddAlbum($artistID, $genreID, $albumName, $year, $producer) {
         $statement->bindParam(5, $producer);
         
         $statement->execute();
-
-        echo "Albumi ".$albumName." on lisätty tietokantaan"; 
+ 
     }catch(PDOException $e){
         echo "Albumia ei voitu lisätä<br>";
         echo $e->getMessage();
