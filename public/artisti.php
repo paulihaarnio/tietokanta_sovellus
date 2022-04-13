@@ -17,16 +17,17 @@ include MODULES_DIR.'add_artisti.php';
         }
     }
 ?>
-
-    <h1>Artistin lisäys</h1>
-    <form action="artisti.php" method="post">
-    <label>Artistin nimi</label>
-    <input type="text" name="nimi"> <br>
-    <label>Artistin syntymävuosi</label>
-    <input type="text" name="svuosi"><br>
-    <label>Syntymämaa</label>
-    <input type="text" name="maa">    <br>   
-    <br><input type="submit" value="Lisää artisti">
-    </form>
+    <div>
+        <h1>Artistin lisäys</h1>
+        <form action="artisti.php" method="post">
+            <label>Artistin nimi</label>
+            <input type="text" name="nimi"> <br>
+            <label>Artistin syntymävuosi</label>
+            <input type="text" name="svuosi"><br>
+            <label>Syntymämaa</label>
+            <input type="text" name="maa">    <br>   
+            <br><input type="submit" value="Lisää artisti">
+        </form>
+    </div>
 
 <?php include TEMPLATES_DIR.'foot.php'; ?>
