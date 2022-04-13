@@ -23,11 +23,11 @@ include MODULES_DIR.'add_kappale.php';
     <h1>Kappaleen lisäys</h1>
     
     <form action="kappale.php" method="post">
-    <label>Artisti <?php createArtistDropdown($selectedID); ?></label> <br>
+    <label>Artisti <?php createArtistDropdown($selectedID); ?></label>
     <label>Kappaleen nimi</label>
-    <input type="text" name="kappaleNimi"> <br>
+    <input type="text" name="kappaleNimi">
     <label>Kappaleen kesto</label>
-    <input type="text" name="kesto"><br>  
+    <input type="text" name="kesto">
     <input type="submit" value="Lisää kappale">
     </form>
 

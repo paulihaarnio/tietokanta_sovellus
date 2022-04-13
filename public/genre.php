@@ -19,8 +19,8 @@ include MODULES_DIR.'add_genre.php';
     <h1>Genren lisäys</h1>
     <form action="genre.php" method="post">
     <label>Genren nimi</label>
-    <input type="text" name="nimi"> <br>   
-    <br><input type="submit" value="Lisää genre">
+    <input type="text" name="nimi">  
+    <input type="submit" value="Lisää genre">
     </form>
 
 <?php include TEMPLATES_DIR.'foot.php'; ?>
