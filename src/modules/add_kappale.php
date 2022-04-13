@@ -25,8 +25,7 @@ function addSong($artistID, $songName, $time) {
         $statement->bindParam(3, $time);
 
         $statement->execute();
-
-        echo "Kappale ".$songName." on lisätty tietokantaan"; 
+ 
     }catch(PDOException $e){
         echo "Kappaletta ei voitu lisätä<br>";
         echo $e->getMessage();

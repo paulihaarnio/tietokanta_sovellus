@@ -8,7 +8,13 @@ include MODULES_DIR.'add_kappale.php';
     $time = filter_input(INPUT_POST, "kesto");
 
     if(isset($artistID)) {
-        addSong($artistID, $songName, $time);
+        try {
+            addSong($artistID, $songName, $time);
+            echo '<div class="alert alert-success" role="alert">Kappale '.$songName .' lisätty!</div>';
+        }catch(Exception $e) {
+            echo '<div class="alert alert-danger" role="alert">'.$e->getMessage().'</div>';
+        }
+        
     }
 
     $selectedID = isset($artistID) ? $artistID : 0;
