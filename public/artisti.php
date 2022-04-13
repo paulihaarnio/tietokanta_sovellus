@@ -17,16 +17,16 @@ include MODULES_DIR.'add_artisti.php';
         }
     }
 ?>
-    <div>
+    <div class="main-container">
         <h1>Artistin lisäys</h1>
         <form action="artisti.php" method="post">
             <label>Artistin nimi</label>
-            <input type="text" name="nimi"> <br>
+            <input type="text" name="nimi">
             <label>Artistin syntymävuosi</label>
-            <input type="text" name="svuosi"><br>
+            <input type="text" name="svuosi">
             <label>Syntymämaa</label>
-            <input type="text" name="maa">    <br>   
-            <br><input type="submit" value="Lisää artisti">
+            <input type="text" name="maa"> 
+            <input type="submit" value="Lisää artisti">
         </form>
     </div>
 
