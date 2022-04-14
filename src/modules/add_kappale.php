@@ -1,5 +1,18 @@
 <?php
 
+function getSongs() {
+    require_once MODULES_DIR.'db.php';
+
+    try {
+        $pdo = getPdoConnection();
+        $sql = "SELECT * FROM kappale";
+        $songs = $pdo->query($sql);
+        return $songs->fetchAll();
+    } catch(PDOException $e) {
+        throw $e;
+    }
+}
+
 function addSong($artistID, $songName, $time) {
     require_once MODULES_DIR.'db.php'; // DB connection
 

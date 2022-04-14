@@ -1,5 +1,18 @@
 <?php
 
+function getAlbums() {
+    require_once MODULES_DIR.'db.php';
+
+    try {
+        $pdo = getPdoConnection();
+        $sql = "SELECT * FROM albumi";
+        $albums = $pdo->query($sql);
+        return $albums->fetchAll();
+    } catch(PDOException $e) {
+        throw $e;
+    }
+}
+
 function AddAlbum($artistID, $genreID, $albumName, $year, $producer) {
     require_once MODULES_DIR.'db.php'; // DB connection
 
