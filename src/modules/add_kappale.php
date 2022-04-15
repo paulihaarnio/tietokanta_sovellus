@@ -14,7 +14,7 @@ function getSongs() {
     }
 }
 
-function getSongsfromArtist($artistiID) {
+function getSongsFromArtist($artistiID) {
     require_once MODULES_DIR.'db.php';
 
     try {
