@@ -19,7 +19,7 @@
 
             <?php
                 foreach($albums as $a) {
-                    echo "<tr><td>".$a["albumiNimi"]."</td><td>" . $a["tekovuosi"]."</td><td>" . $a["artistiID"]."</td><td>" . $a["tuottaja"]. "</td></tr>";
+                    echo "<tr><td>".$a["albumiNimi"]."</td><td>" . $a["tekovuosi"]."</td><td>" . $a["artistiNimi"]."</td><td>" . $a["tuottaja"]. "</td></tr>";
                 }
 
             ?>
