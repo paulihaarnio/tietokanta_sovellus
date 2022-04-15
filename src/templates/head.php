@@ -57,6 +57,10 @@
         .table-striped>tbody>tr:nth-of-type(odd)>* {
             color: white;
         }
+
+        .table-striped>tbody>tr:nth-of-type(even)>* {
+            color: white;
+        }
         
     </style>
 </head>
