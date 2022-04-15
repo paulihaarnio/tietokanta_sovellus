@@ -3,7 +3,7 @@
     include MODULES_DIR.'add_kappale.php';
 
     //hae kaikki albumit tietokannasta
-    $albums = getSongs();
+    $songs = getSongs();
 
 ?>
 
@@ -17,8 +17,8 @@
     
 
         <?php
-            foreach($albums as $a) {
-                echo "<tr><td>".$a["kappaleNimi"]."</td><td>" . $a["kesto"]."</td><td>" . $a["artistiID"]. "</td></tr>";
+            foreach($songs as $s) {
+                echo "<tr><td>".$s["kappaleNimi"]."</td><td>" . $s["kesto"]."</td><td>" . $s["artistiID"]. "</td></tr>";
             }
 
         ?>
