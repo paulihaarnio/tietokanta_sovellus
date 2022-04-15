@@ -15,12 +15,12 @@ include MODULES_DIR.'add_genre.php';
         }
     }
 ?>
-
-    <h1>Genren lisäys</h1>
-    <form action="genre.php" method="post">
-    <label>Genren nimi</label>
-    <input type="text" name="nimi">  
-    <input type="submit" value="Lisää genre">
-    </form>
-
+    <div class="main-container">
+        <h1>Genren lisäys</h1>
+        <form action="genre.php" method="post">
+            <label>Genren nimi</label>
+            <input type="text" name="nimi">  
+            <input type="submit" value="Lisää genre">
+        </form>
+    </div>
 <?php include TEMPLATES_DIR.'foot.php'; ?>

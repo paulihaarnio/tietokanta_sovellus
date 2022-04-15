@@ -17,7 +17,7 @@
             color: white;
         }
 
-        h1, li {
+        h1, h2, li {
             font-weight: bold;
         }
 
@@ -53,6 +53,11 @@
         .dropdown {
             display: block;
         }
+
+        .table-striped>tbody>tr:nth-of-type(odd)>* {
+            color: white;
+        }
+        
     </style>
 </head>
 <body>
