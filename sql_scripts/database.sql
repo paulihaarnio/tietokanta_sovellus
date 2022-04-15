@@ -37,6 +37,16 @@ create Table albumirivi(
     kappaleID int(4),
     PRIMARY KEY (albumiID, rivinro)
 );
+create Table soittolista(
+    soittolistaID int not null PRIMARY KEY auto_increment,
+    soittolistaNimi varchar(150)
+);
+create Table soittolistarivi(
+    soittolistaID int not null,
+    rivinro int not null,
+    kappaleID int(4),
+    PRIMARY KEY (soittolistaID, rivinro)
+);
 
 
 ALTER TABLE albumi
@@ -47,7 +57,8 @@ ALTER TABLE kappale
 ADD FOREIGN KEY (artistiID) REFERENCES artisti(artistiID);
 ALTER TABLE albumirivi
 ADD FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID);
-
+ALTER TABLE soittolistarivi
+ADD FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID);
 
 INSERT INTO artisti (artistiNimi, svuosi, maa) VALUES ('Jari Sillanpää',1965,'Suomi'),('Katri Helena',1945 ,'Suomi'),('Elvis Presley',1935,'Yhdysvallat');
 
