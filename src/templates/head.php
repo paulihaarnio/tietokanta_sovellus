@@ -77,19 +77,21 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./">Koti</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./artisti.php">Artisti</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./albumi.php">Albumi</a>
-            </li>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./kappale.php">Kappale</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./genre.php">Genre</a>
-            </li>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Lisää tietokantaan
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="./artisti.php">Artisti</a></li>
+                        <li><a class="dropdown-item" href="./albumi.php">Albumi</a></li>
+                        <li><a class="dropdown-item" href="./kappale.php">Kappale</a></li>
+                        <li><a class="dropdown-item" href="./genre.php">Genre</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./artistit.php">Artistit</a>
             </li>
