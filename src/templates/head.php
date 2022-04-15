@@ -88,6 +88,9 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./kappaleet.php">Kappaleet</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./genret.php">Genret</a>
+            </li>
         </ul>
         </div>
     </div>
