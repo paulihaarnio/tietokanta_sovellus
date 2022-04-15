@@ -75,3 +75,9 @@ ADD FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID);
 INSERT INTO artisti (artistiNimi, svuosi, maa) VALUES ('Jari Sillanpää',1965,'Suomi'),('Katri Helena',1945 ,'Suomi'),('Elvis Presley',1935,'Yhdysvallat');
 
 INSERT INTO kappale (artistiID, kappaleNimi, kesto, mediaNimi) VALUES (1,'Satulinna',3.59, 'satulinna'),(1,'Malagaan',3.35, 'malagaan'),(1,'Valkeaa unelmaa',3.00, 'valkeaaunelmaa'),(2,'Joulumaa',3.26, 'joulumaa'),(2,'Anna mulle tähtitaivas',3.10, 'tahtitaivas'),(2,'Puhelinlangat laulaa',2.24, 'puhelinlangat'),(3,'Hound dog',2.13, 'hounddog'),(3,'Cant Help Falling in Love',3.02, 'chfil'),(3,'Burning Love',2.50, 'burninglove');
+
+INSERT INTO genre (genreNimi) values ('Iskelmä'),('Rock'),('Rap'),('Klassinen');
+
+insert into albumi (albumiNimi,tekovuosi,genreID,artistiID,tuottaja) VALUES ('testi albumi', '1987',4,1,'tuottaja tarja'),('hauska levy','2005',3,2,'keijo kallujärvi'),('elviksen parhaat','2000', 2,3,'tauno talttapää');
+
+insert into albumirivi VALUES (1, 1, 1),(1, 2, 2),(1, 3, 3),(2, 1, 4),(2, 2, 5),(2, 3, 6),(3, 1, 7),(3, 2, 8),(3, 3, 9);

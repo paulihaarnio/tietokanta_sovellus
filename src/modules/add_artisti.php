@@ -13,6 +13,19 @@ function getArtists() {
     }
 }
 
+function getArtist($artistID){
+    require_once MODULES_DIR.'db.php';
+
+    try{
+        $pdo=getPdoConnection();
+        $sql="SELECT * from artisti, kappale WHERE artisti.artistiID = $artistID";
+        $info = $pdo->query($sql);
+        return $info->fetchAll();
+    }catch(PDOException $e) {
+        throw $e;
+    }
+}
+
 function addArtist($name, $year, $country) {
     require_once MODULES_DIR.'db.php'; // DB connection
 

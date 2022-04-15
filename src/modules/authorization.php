@@ -19,7 +19,7 @@ function login($uname, $pw){
     try{
         $pdo = getPdoConnection();
         //Haetaan käyttäjä annetulla käyttäjänimellä
-        $sql = "SELECT ktunnus, ksalasana FROM käyttäjä WHERE ktunnus=?";
+        $sql = "SELECT ktunnus, ksalasana FROM kayttaja WHERE ktunnus=?";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(1, $uname);
         $statement->execute();

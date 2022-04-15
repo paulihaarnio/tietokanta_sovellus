@@ -9,12 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Musiikkisovellus</title>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #333;
             color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: #bfd8ff;
         }
 
         h1, h2, li {
@@ -64,7 +74,7 @@
             color: white;
         }
 
-        #ASong {
+        .play {
             border: none;
             background-color: #2159ff;
             color: white;
