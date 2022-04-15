@@ -1,20 +1,6 @@
 <?php
 
-function getSongs() {
-    require_once MODULES_DIR.'db.php';
-
-    try {
-        $pdo = getPdoConnection();
-        $sql = "SELECT kappaleNimi, kesto, artisti.artistiNimi FROM kappale 
-        INNER JOIN artisti ON artisti.artistiID = kappale.artistiID";
-        $songs = $pdo->query($sql);
-        return $songs->fetchAll();
-    } catch(PDOException $e) {
-        throw $e;
-    }
-}
-
-function getSongsFromArtist($artistiID) {
+function getSongs($artistiID) {
     require_once MODULES_DIR.'db.php';
 
     try {
