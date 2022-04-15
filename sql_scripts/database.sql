@@ -28,7 +28,8 @@ create table kappale(
     kappaleID int not null PRIMARY KEY AUTO_INCREMENT,
     kappaleNimi VARCHAR(150),
     kesto time(1),
-    artistiID int(4)
+    artistiID int(4),
+    mediaNimi VARCHAR(150)
 );
 drop Table if EXISTS albumirivi;
 create Table albumirivi(
@@ -73,4 +74,4 @@ ADD FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID);
 
 INSERT INTO artisti (artistiNimi, svuosi, maa) VALUES ('Jari Sillanpää',1965,'Suomi'),('Katri Helena',1945 ,'Suomi'),('Elvis Presley',1935,'Yhdysvallat');
 
-INSERT INTO kappale (artistiID, kappaleNimi, kesto) VALUES (1,'Satulinna',3.59),(1,'Malagaan',3.35),(1,'Valkeaa unelmaa',3.00),(2,'Joulumaa',3.26),(2,'Anna mulle tähtitaivas',3.10),(2,'Puhelinlangat laulaa',2.24),(3,'Hound dog',2.13),(3,'Cant Help Falling in Love',3.02),(3,'Burning Love',2.50);
+INSERT INTO kappale (artistiID, kappaleNimi, kesto, mediaNimi VALUES (1,'Satulinna',3.59, 'satulinna'),(1,'Malagaan',3.35, 'malagaan'),(1,'Valkeaa unelmaa',3.00, 'valkeaaunelmaa'),(2,'Joulumaa',3.26, 'joulumaa'),(2,'Anna mulle tähtitaivas',3.10, 'tahtitaivas'),(2,'Puhelinlangat laulaa',2.24, 'puhelinlangat'),(3,'Hound dog',2.13, 'hounddog'),(3,'Cant Help Falling in Love',3.02, 'chfil'),(3,'Burning Love',2.50, 'burninglove');
