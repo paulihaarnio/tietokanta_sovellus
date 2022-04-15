@@ -20,6 +20,11 @@
 
         a {
             text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: #bfd8ff;
         }
 
         h1, h2, li {
