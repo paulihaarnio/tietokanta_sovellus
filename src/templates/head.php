@@ -42,7 +42,7 @@
             font-weight: bold;
             margin-top: 1em;
             border: none;
-            background-color: #0040FF;
+            background-color: #2159ff;
             color: white;
 
             border-radius: 20px;
@@ -62,6 +62,17 @@
 
         .table-striped>tbody>tr:nth-of-type(even)>* {
             color: white;
+        }
+
+        #ASong {
+            border: none;
+            background-color: #2159ff;
+            color: white;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+            border-radius: 20px;
         }
         
     </style>
