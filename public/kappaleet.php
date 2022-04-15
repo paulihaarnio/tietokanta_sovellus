@@ -13,7 +13,7 @@
         <h2>Kappaleet</h2>
         <table class="table table-striped">
             <tr>
-                <th></th>
+                <th style="width:60px"></th>
                 <th>Nimi</th>
                 <th>Artisti</th>
                 <th>Kesto</th>
