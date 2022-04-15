@@ -18,7 +18,7 @@ function getArtist($artistID){
 
     try{
         $pdo=getPdoConnection();
-        $sql="SELECT * from artisti, kappale ";
+        $sql="SELECT * from artisti, kappale WHERE artisti.artistiID = $artistID";
         $info = $pdo->query($sql);
         return $info->fetchAll();
     }catch(PDOException $e) {
