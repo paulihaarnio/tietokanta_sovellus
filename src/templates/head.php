@@ -116,11 +116,10 @@
             <a class="nav-link active" aria-current="page" href="./genret.php">Genret</a>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
             <a class="nav-link active" aria-current="page" href="./login.php">Kirjaudu sisään</a>
-=======
+            </li>
+            <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./soittolista.php">Soittolista</a>
->>>>>>> 5be139b87565c6350ddc6ad6763fe43711cf362e
             </li>
         </ul>
         </div>
