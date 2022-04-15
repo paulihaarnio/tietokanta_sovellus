@@ -14,6 +14,20 @@ function getSongs() {
     }
 }
 
+function getSongsfromArtist($artistiID) {
+    require_once MODULES_DIR.'db.php';
+
+    try {
+        $pdo = getPdoConnection();
+        $sql = "SELECT kappaleNimi, kesto, artisti.artistiNimi FROM kappale 
+        INNER JOIN artisti ON artisti.artistiID = kappale.artistiID WHERE kappale.artistiID = $artistiID";
+        $songs = $pdo->query($sql);
+        return $songs->fetchAll();
+    } catch(PDOException $e) {
+        throw $e;
+    }
+}
+
 function addSong($artistID, $songName, $time) {
     require_once MODULES_DIR.'db.php'; // DB connection
 
