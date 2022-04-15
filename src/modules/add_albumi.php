@@ -5,8 +5,9 @@ function getAlbums() {
 
     try {
         $pdo = getPdoConnection();
-        $sql = "SELECT albumiNimi, tekovuosi, artisti.artistiNimi, tuottaja FROM albumi 
-        INNER JOIN artisti ON artisti.artistiID = albumi.artistiID";
+        $sql = "SELECT albumiNimi, tekovuosi, artisti.artistiNimi, tuottaja, genreNimi FROM albumi 
+        INNER JOIN artisti ON artisti.artistiID = albumi.artistiID
+        INNER JOIN genre ON genre.genreID = albumi.genreID";
         $albums = $pdo->query($sql);
         return $albums->fetchAll();
     } catch(PDOException $e) {
