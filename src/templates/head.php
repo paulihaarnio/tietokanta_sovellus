@@ -76,6 +76,18 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./kappale.php">Kappale</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./genre.php">Genre</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./artistit.php">Artistit</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./albumit.php">Albumit</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./kappaleet.php">Kappaleet</a>
+            </li>
         </ul>
         </div>
     </div>
