@@ -5,7 +5,7 @@ function getSongs() {
 
     try {
         $pdo = getPdoConnection();
-        $sql = "SELECT kappaleNimi, kesto, artisti.artistiNimi FROM kappale 
+        $sql = "SELECT kappaleNimi, kesto, artisti.artistiNimi, mediaNimi FROM kappale 
         INNER JOIN artisti ON artisti.artistiID = kappale.artistiID";
         $songs = $pdo->query($sql);
         return $songs->fetchAll();

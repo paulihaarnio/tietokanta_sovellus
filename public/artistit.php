@@ -1,6 +1,7 @@
 <?php 
     include TEMPLATES_DIR.'head.php';
     include MODULES_DIR.'add_artisti.php';
+    include MODULES_DIR.'add_kappale.php';
 
     //hae kaikki artistit tietokannasta
     $artists = getArtists();
