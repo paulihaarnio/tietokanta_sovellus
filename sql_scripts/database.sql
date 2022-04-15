@@ -78,4 +78,6 @@ INSERT INTO kappale (artistiID, kappaleNimi, kesto, mediaNimi) VALUES (1,'Satuli
 
 INSERT INTO genre (genreNimi) values ('Iskelmä'),('Rock'),('Rap'),('Klassinen');
 
-insert into albumi (albumiNimi,tekovuosi,genreID,artistiID,tuottaja) VALUES ('testi albumi', '1987',4,1,'tuottaja tarja')('hauska levy','2005',3,2,'keijo kallujärvi'),('elviksen parhaat','2000', 2,3,'tauno talttapää');
+insert into albumi (albumiNimi,tekovuosi,genreID,artistiID,tuottaja) VALUES ('testi albumi', '1987',4,1,'tuottaja tarja'),('hauska levy','2005',3,2,'keijo kallujärvi'),('elviksen parhaat','2000', 2,3,'tauno talttapää');
+
+insert into albumirivi VALUES (1, 1, 1),(1, 2, 2),(1, 3, 3),(2, 1, 4),(2, 2, 5),(2, 3, 6),(3, 1, 7),(3, 2, 8),(3, 3, 9);

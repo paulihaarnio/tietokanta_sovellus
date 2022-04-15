@@ -18,6 +18,10 @@
             color: white;
         }
 
+        a {
+            text-decoration: none;
+        }
+
         h1, h2, li {
             font-weight: bold;
         }
