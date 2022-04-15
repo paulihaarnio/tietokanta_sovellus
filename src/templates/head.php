@@ -121,6 +121,9 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./soittolista.php">Soittolista</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./register.php">Rekisteröidy</a>
+            </li>
         </ul>
         </div>
     </div>
