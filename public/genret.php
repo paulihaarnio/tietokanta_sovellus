@@ -7,7 +7,7 @@
 
 ?>
 
-    <h2>Albumit</h2>
+    <h2>Genret</h2>
     <table class="table table-striped">
         <tr>
             <th>Genre</th>
