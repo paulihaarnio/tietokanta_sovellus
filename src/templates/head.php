@@ -115,6 +115,9 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./genret.php">Genret</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./login.php">Kirjaudu sisään</a>
+            </li>
         </ul>
         </div>
     </div>
