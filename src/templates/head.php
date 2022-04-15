@@ -64,7 +64,7 @@
             color: white;
         }
 
-        #ASong {
+        .play {
             border: none;
             background-color: #2159ff;
             color: white;
