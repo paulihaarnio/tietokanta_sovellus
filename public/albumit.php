@@ -13,13 +13,14 @@
                 <th>Nimi</th>
                 <th>Tekovuosi</th>
                 <th>Artisti</th>
+                <th>Genre</th>
                 <th>Tuottaja</th>
             </tr>
         
 
             <?php
                 foreach($albums as $a) {
-                    echo "<tr><td>".$a["albumiNimi"]."</td><td>" . $a["tekovuosi"]."</td><td>" . $a["artistiNimi"]."</td><td>" . $a["tuottaja"]. "</td></tr>";
+                    echo "<tr><td>".$a["albumiNimi"]."</td><td>" . $a["tekovuosi"]."</td><td>" . $a["artistiNimi"]."</td><td>" . $a["genreNimi"]."</td><td>" . $a["tuottaja"]. "</td></tr>";
                 }
 
             ?>
