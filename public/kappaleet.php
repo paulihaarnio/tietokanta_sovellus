@@ -11,14 +11,14 @@
         <table class="table table-striped">
             <tr>
                 <th>Nimi</th>
-                <th>Kesto</th>
                 <th>Artisti</th>
+                <th>Kesto</th>
             </tr>
         
 
             <?php
                 foreach($songs as $s) {
-                    echo "<tr><td>".$s["kappaleNimi"]."</td><td>" . $s["kesto"]."</td><td>" . $s["artistiID"]. "</td></tr>";
+                    echo "<tr><td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td></tr>";
                 }
 
             ?>
