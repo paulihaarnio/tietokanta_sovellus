@@ -19,7 +19,7 @@
 
             <?php
                 foreach($artists as $artist) {
-                    echo "<tr><td><a onClick=\"getSongs($artist[artistiID])\">".$artist["artistiNimi"]."</a></td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
+                    echo "<tr><td>".$artist["artistiNimi"]."</td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
                 }
 
             ?>
