@@ -37,10 +37,19 @@ create Table albumirivi(
     kappaleID int(4),
     PRIMARY KEY (albumiID, rivinro)
 );
+drop table if EXISTS kayttaja;
+create table kayttaja(
+    kayttajaID int not null PRIMARY KEY AUTO_INCREMENT,
+    ktunnus VARCHAR(150),
+    ksalasana VARCHAR(150)
+);
+drop table if EXISTS soittolista;
 create Table soittolista(
     soittolistaID int not null PRIMARY KEY auto_increment,
-    soittolistaNimi varchar(150)
+    soittolistaNimi varchar(150),
+    kayttajaID int(4)
 );
+drop table if EXISTS soittolistarivi;
 create Table soittolistarivi(
     soittolistaID int not null,
     rivinro int not null,
@@ -57,6 +66,8 @@ ALTER TABLE kappale
 ADD FOREIGN KEY (artistiID) REFERENCES artisti(artistiID);
 ALTER TABLE albumirivi
 ADD FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID);
+ALTER TABLE soittolista
+ADD FOREIGN KEY (kayttajaID) REFERENCES kayttaja(kayttajaID);
 ALTER TABLE soittolistarivi
 ADD FOREIGN KEY (kappaleID) REFERENCES kappale(kappaleID);
 
