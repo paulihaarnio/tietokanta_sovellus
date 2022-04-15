@@ -13,6 +13,7 @@
         <h2>Kappaleet</h2>
         <table class="table table-striped">
             <tr>
+                <th></th>
                 <th>Nimi</th>
                 <th>Artisti</th>
                 <th>Kesto</th>
@@ -21,21 +22,12 @@
 
             <?php
                 foreach($songs as $s) {
-                    echo "<tr><td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td></tr>";
+                    echo "<tr><td><button id='ASong' onClick='playPause()'>
+                        <audio src='../media/satulinna.mp3'></audio>&#9654;</button></td>
+                        <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td></tr>";
                 }
-
             ?>
         </table>
-
-        <button id="ASong" onClick="playPause()">
-            <audio
-                src="../media/satulinna.mp3"
-                autoplay
-                loop
-            ></audio>
-            Satulinna
-        </button>
-
     </div>
 
     <script>
