@@ -16,7 +16,7 @@ function getArtist($artistID){
     } else {
     try{
         $pdo=getPdoConnection();
-        $sql="SELECT artistiID, artistiNimi, svuosi, maa, kappaleNimi, kesto from artisti  
+        $sql="SELECT artisti.artistiID, artistiNimi, svuosi, maa, kappale.kappaleNimi, kappale.kesto from artisti  
         INNER JOIN kappale ON artisti.artistiID = kappale.artistiID
         WHERE artisti.artistiID = $artistID";
         $info = $pdo->query($sql);
