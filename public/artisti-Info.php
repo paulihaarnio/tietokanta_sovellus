@@ -6,7 +6,8 @@ include MODULES_DIR.'add_kappale.php';
 $uri = parse_url(filter_input(INPUT_SERVER,'PATH_INFO'),PHP_URL_PATH);
 $parameters = explode('=',$uri);
 $id = $parameters[1];
-
+$artist = getArtist($id);
+$songs = getSongsfromArtist($id);
 ?>
 
 <div class="main-container">
@@ -19,8 +20,8 @@ $id = $parameters[1];
             <tr><td></td></tr>
 
             <?php
-                foreach($info as $i){
-                    echo "<tr><td>".$i["artistiNimi"]."</td><td>" . $i["kappaleNimi"]."</td><td>";
+                foreach($artist as $a){
+                    echo "<tr><td>".$a["artistiNimi"]."</td><td>" . "</td><td>";
                 }
             ?>
         </table>
