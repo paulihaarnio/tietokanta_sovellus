@@ -19,14 +19,14 @@ if(!isset($_SESSION["ktunnus"]) && isset($uname)){
 
     if(!isset($_SESSION["ktunnus"])){
 ?>
-
-    <form action="login.php" method="post">
-        <label for="ktunnus">Käyttäjä:</label><br>
-        <input type="text" name="ktunnus" id="ktunnus"><br>
-        <label for="ksalasana">Salasana:</label><br>
-        <input type="ksalasana" name="ksalasana" id="ksalasana"><br>
-        <input type="submit" class="btn btn-primary" value="Log in">
-    </form>
-
+    <div class="main-container">
+        <form action="login.php" method="post">
+            <label for="ktunnus">Käyttäjä:</label><br>
+            <input type="text" name="ktunnus" id="ktunnus"><br>
+            <label for="ksalasana">Salasana:</label><br>
+            <input type="ksalasana" name="ksalasana" id="ksalasana"><br>
+            <input type="submit" class="btn btn-primary" value="Log in">
+        </form>
+    </div>
 
 <?php } include TEMPLATES_DIR.'foot.php'; ?>
