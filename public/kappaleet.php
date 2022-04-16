@@ -4,7 +4,7 @@
 
     //hae kaikki albumit tietokannasta
     $songs = getSongs();
-
+    
     
 
 ?>
@@ -27,7 +27,7 @@
                     echo "<tr><td><button id='".$s["mediaNimi"]."button' class='play' onClick=\"playPause('".$s["mediaNimi"]."')\">
                         <audio id='".$s["mediaNimi"]."' src='../media/".$s["mediaNimi"].".mp3'></audio><i id='".$s["mediaNimi"]."icon' class='bi bi-play-fill'></i></i></button></td>
                         <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td><td><button><i class='bi bi-heart'></i></button></td>
-                        <td><button><i class='bi bi-trash'></i> Poista kappale</button></td></tr>";
+                        <td><button onClick='deleteSong(".$s["kappaleID"].")'><i class='bi bi-trash'></i> Poista kappale </button></td></tr>";
                 }
             ?>
 
