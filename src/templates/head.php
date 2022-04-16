@@ -134,6 +134,9 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./register.php">Rekisteröidy</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./logout.php">Kirjaudu ulos</a>
+            </li>
         </ul>
         </div>
     </div>

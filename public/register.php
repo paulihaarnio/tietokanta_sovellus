@@ -17,9 +17,9 @@ if(isset($user)){
 
 
 ?>
-
+<h2>Rekisteröidy</h2>
 <form action="register.php" method="post">
-        <label for="username">Kättäjätunnus:</label><br>
+        <label for="username">Käyttäjätunnus:</label><br>
         <input type="text" name="username" id="username"><br>
         <label for="password">Salasana:</label><br>
         <input type="password" name="salasana" id="salasana"><br>
