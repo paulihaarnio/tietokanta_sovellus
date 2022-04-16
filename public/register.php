@@ -17,13 +17,13 @@ if(isset($user)){
 
 
 ?>
-    <div class="main-container">
-        <form action="register.php" method="post">
-            <label for="username">Kättäjätunnus:</label><br>
-            <input type="text" name="username" id="username"><br>
-            <label for="password">Salasana:</label><br>
-            <input type="password" name="salasana" id="salasana"><br>
-            <input type="submit" class="btn btn-primary" value="Rekisteröidy">
-        </form>
-    </div>
+<h2>Rekisteröidy</h2>
+<form action="register.php" method="post">
+        <label for="username">Käyttäjätunnus:</label><br>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">Salasana:</label><br>
+        <input type="password" name="salasana" id="salasana"><br>
+        <input type="submit" class="btn btn-primary" value="Rekisteröidy">
+    </form>
+
 <?php include TEMPLATES_DIR.'foot.php';?>

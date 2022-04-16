@@ -37,11 +37,11 @@ function login($uname, $pw){
 
         //Jos käyttäjä tunnistettu, talletetaan käyttäjän tiedot sessioon
         $_SESSION["ktunnus"] = $uname;
-       
+        
+        echo '<div class="alert alert-success" role="alert">'."Tervetuloa $uname".'</div>';
     }catch(PDOException $e){
         throw $e;
     }
-
 }
 
 function logout(){
@@ -52,6 +52,7 @@ function logout(){
     }catch(Exception $e){
         throw $e;
     }
+   
 }
 
 ?>
