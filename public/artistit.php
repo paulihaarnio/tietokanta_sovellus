@@ -5,7 +5,7 @@
 
     //hae kaikki artistit tietokannasta
     $artistID = null;
-    $artists = getArtist($artistID);
+    $artists = getArtists();
 
 ?>
     <div class="main-container">
