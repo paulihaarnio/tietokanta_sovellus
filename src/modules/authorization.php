@@ -2,7 +2,7 @@
 function login($uname, $pw){
 
     require_once MODULES_DIR.'db.php';
-
+    
     // $uname = filter_input(INPUT_POST, "username");
     // $pw = filter_input(INPUT_POST, "password");
 
@@ -36,7 +36,7 @@ function login($uname, $pw){
         }
 
         //Jos käyttäjä tunnistettu, talletetaan käyttäjän tiedot sessioon
-        $_SESSION["ktunnus"] = $uname;
+        $_SESSION["username"] = $uname;
         
         echo '<div class="alert alert-success" role="alert">'."Tervetuloa $uname".'</div>';
     }catch(PDOException $e){

@@ -16,8 +16,7 @@ if(!isset($_SESSION["username"]) && isset($uname)){
     }
    
 }
-
-    if(!isset($_SESSION["ktunnus"])){
+    if(!isset($_SESSION["username"])){
 ?>
     <h2>Kirjaudu sisään</h2>
     <form action="login.php" method="post">
