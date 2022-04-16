@@ -20,7 +20,7 @@
 
             <?php
                 foreach($artists as $artist) {
-                    echo "<tr><td><a href='artisti-Info.php?id=" .$artist['artistiID']."' onClick='getArtist($artistID)' value=$artistID id=".$artist['artistiID'].">".$artist["artistiNimi"]."</a></td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
+                    echo "<tr><td><a href='artisti-Info.php/" .$artist['artistiID']."' onClick='getArtist($artistID)' value=$artistID id=".$artist['artistiID'].">".$artist["artistiNimi"]."</a></td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
                 }
 
             ?>

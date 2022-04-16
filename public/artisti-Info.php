@@ -11,11 +11,12 @@ include MODULES_DIR.'add_kappale.php';
             <tr>
                 <th>Kappaleet</th>
             </tr>
-        
+            <tr><td></td></tr>
 
             <?php
+
                 foreach($info as $i){
-                    echo "<tr><td>".$i["artistiNimi"]."</td><td>" . $i["kappale"]."</td><td>";
+                    echo "<tr><td>".$i["artistiNimi"]."</td><td>" . $i["kappaleNimi"]."</td><td>";
                 }
             ?>
         </table>
