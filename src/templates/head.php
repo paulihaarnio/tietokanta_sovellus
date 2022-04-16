@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,6 +79,32 @@
         .play {
             border: none;
             background-color: #2159ff;
+            color: white;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+            border-radius: 20px;
+        }
+
+        .heartbtn {
+            border: 2px solid #222;
+            background-color: transparent;
+            color: white;
+            border-radius: 20px;
+            padding-top: 0.30em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            padding-bottom: 0.1em;
+        }
+
+        .heartbtn:hover {
+            color: #2159ff;
+        }
+
+        .deletebtn {
+            border: 2px solid #222;
+            background-color: transparent;
             color: white;
             padding-left: 1em;
             padding-right: 1em;

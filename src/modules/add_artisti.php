@@ -1,22 +1,24 @@
 <?php
 
+function getArtists() {
+    require_once MODULES_DIR.'db.php';
+
+    try {
+        $pdo = getPdoConnection();
+        $sql = "SELECT * FROM artisti";
+        $artists = $pdo->query($sql);
+        return $artists->fetchAll();
+    } catch(PDOException $e) {
+        throw $e;
+    }
+}
+
 function getArtist($artistID){
     require_once MODULES_DIR.'db.php';
     
-    if(!isset($artistID)) {
-        
-        try{
-            $pdo=getPdoConnection();
-            $sql="SELECT * from artisti WHERE artisti.artistiID LIKE '%'";
-            $info = $pdo->query($sql);
-            return $info->fetchAll();
-        }catch(PDOException $e) {
-            throw $e;
-        }
-    } else {
     try{
         $pdo=getPdoConnection();
-        $sql="SELECT artistiID, artistiNimi, svuosi, maa, kappaleNimi, kesto from artisti  
+        $sql="SELECT artisti.artistiID, artistiNimi, svuosi, maa, kappale.kappaleNimi, kappale.kesto from artisti  
         INNER JOIN kappale ON artisti.artistiID = kappale.artistiID
         WHERE artisti.artistiID = $artistID";
         $info = $pdo->query($sql);
@@ -24,7 +26,7 @@ function getArtist($artistID){
     }catch(PDOException $e) {
         throw $e;
     }
-}
+
 }
 
 function addArtist($name, $year, $country) {
