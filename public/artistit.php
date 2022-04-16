@@ -4,7 +4,8 @@
     include MODULES_DIR.'add_kappale.php';
 
     //hae kaikki artistit tietokannasta
-    $artists = getArtists();
+    $artistID = null;
+    $artists = getArtist($artistID);
 
 ?>
     <div class="main-container">
