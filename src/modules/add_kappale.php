@@ -5,7 +5,7 @@ function getSongs() {
 
     try {
         $pdo = getPdoConnection();
-        $sql = "SELECT kappaleNimi, kesto, artisti.artistiNimi, mediaNimi FROM kappale 
+        $sql = "SELECT kappaleID, kappaleNimi, kesto, artisti.artistiNimi, mediaNimi FROM kappale 
         INNER JOIN artisti ON artisti.artistiID = kappale.artistiID";
         $songs = $pdo->query($sql);
         return $songs->fetchAll();
@@ -57,5 +57,36 @@ function addSong($artistID, $songName, $time) {
     }catch(PDOException $e){
         echo "Kappaletta ei voitu lisätä<br>";
         echo $e->getMessage();
+    }
+}
+
+function deleteSong($id){
+    require_once MODULES_DIR.'db.php'; // DB connection
+    
+    //Tarkistetaan onko muttujia asetettu
+    if( !isset($id) ){
+        throw new Exception("Missing parameters! Cannot delete Song!");
+    }
+    
+    try{
+        $pdo = getPdoConnection();
+        // Start transaction
+        $pdo->beginTransaction();
+        // Delete from worktime table
+      // $sql = "DELETE FROM albumirivi WHERE kappaleID = ?";
+       // $statement = $pdo->prepare($sql);
+       // $statement->bindParam(1, $id);        
+       // $statement->execute();
+        // Delete from person table
+        $sql = "DELETE FROM kappale WHERE kappaleID = ?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(1, $id);        
+        $statement->execute();
+        // Commit transaction
+        $pdo->commit();
+    }catch(PDOException $e){
+        // Rollback transaction on error
+        $pdo->rollBack();
+        throw $e;
     }
 }
