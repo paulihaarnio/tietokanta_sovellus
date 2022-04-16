@@ -3,9 +3,12 @@ include TEMPLATES_DIR.'head.php';
 include MODULES_DIR.'add_artisti.php';
 include MODULES_DIR.'add_kappale.php';
 
+//pilkotaan URL palasiksi = merkin kohdalta
 $uri = parse_url(filter_input(INPUT_SERVER,'PATH_INFO'),PHP_URL_PATH);
 $parameters = explode('=',$uri);
 $id = $parameters[1];
+
+//haetaan tietokannasta artistit ja kappaleet
 $artist = getArtist($id);
 $songs = getSongsfromArtist($id);
 ?>
