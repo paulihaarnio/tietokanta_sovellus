@@ -2,7 +2,7 @@
 
 function getArtist($artistID){
     require_once MODULES_DIR.'db.php';
-
+    
     if(!isset($artistID)) {
         
         try{
@@ -14,10 +14,9 @@ function getArtist($artistID){
             throw $e;
         }
     } else {
-
     try{
         $pdo=getPdoConnection();
-        $sql="SELECT artistiNimi, svuosi, maa, kappaleNimi, kesto from artisti  
+        $sql="SELECT artistiID, artistiNimi, svuosi, maa, kappaleNimi, kesto from artisti  
         INNER JOIN kappale ON artisti.artistiID = kappale.artistiID
         WHERE artisti.artistiID = $artistID";
         $info = $pdo->query($sql);
