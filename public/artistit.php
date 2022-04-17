@@ -4,10 +4,11 @@
     include MODULES_DIR.'add_kappale.php';
 
     //hae kaikki artistit tietokannasta
-    $artistID = null;
     $artists = getArtists();
 
 ?>
+
+
     <div class="main-container">
         <h2>Artistit</h2>
         <table class="table table-striped">
@@ -19,8 +20,10 @@
         
 
             <?php
+
                 foreach($artists as $artist) {
-                    echo "<tr><td><a href='artisti-Info.php". "?id=" .$artist['artistiID']."' onClick='getArtist($artistID)' value=$artistID id=".$artist['artistiID'].">".$artist["artistiNimi"]."</a></td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
+                    
+                    echo "<tr><td><a href='artisti-Info.php". "?id=" .$artist['artistiID']."' onClick='getArtist(".$artist["artistiID"].")' value=".$artist['artistiID']." id=".$artist['artistiID'].">".$artist["artistiNimi"]."</a></td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
                 }
 
             ?>
