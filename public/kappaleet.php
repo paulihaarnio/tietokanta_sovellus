@@ -15,7 +15,7 @@
                 <th>Nimi</th>
                 <th>Artisti</th>
                 <th>Kesto</th>
-                <th>Lisää soittolistaan</th>
+                <th></th>
                 <th></th>
             </tr>
 
@@ -23,7 +23,7 @@
                 foreach($songs as $s) {
                     echo "<tr><td><button id='".$s["mediaNimi"]."button' class='play' onClick=\"playPause('".$s["mediaNimi"]."')\">
                         <audio id='".$s["mediaNimi"]."' src='../media/".$s["mediaNimi"].".mp3'></audio><i id='".$s["mediaNimi"]."icon' class='bi bi-play-fill'></i></i></button></td>
-                        <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td><td><a class='heartbtn' href='../src/modules/songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-heart'></i></a></td>
+                        <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td><td><a class='buttonstyle' href='../src/modules/songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-heart'></i>Lisää soittolistaan</a></td>
                         <td><button class='deletebtn'><i class='bi bi-trash'></i> Poista kappale</button></td></tr>";
                 }
             ?>

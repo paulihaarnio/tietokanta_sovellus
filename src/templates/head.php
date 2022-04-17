@@ -50,7 +50,7 @@
             border: none;
             border-radius: 4px;
         }
-        input[type="submit"] {
+        input[type="submit"], .buttonstyle {
             font-weight: bold;
             margin-top: 1em;
             border: none;
@@ -62,6 +62,11 @@
             padding-right: 1em;
             padding-bottom: 0.3em;
             padding-left: 1em;
+        }
+
+        .buttonstyle>i {
+            margin-right: 0.4em;
+            font-size: 0.9em;
         }
 
         .dropdown {
