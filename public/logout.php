@@ -4,10 +4,10 @@
 
     if(isset($_SESSION["username"])){
         logout();
-        header("Location: logout.php");
+       // header("Location: logout.php");
     }else{
         echo '<div class="alert alert-success" role="alert">Logged out!!</div>';
     }
-    header("Location: public/");
+  //  header("Location: public/");
     include TEMPLATES_DIR.'foot.php.';
 ?>

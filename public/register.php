@@ -2,7 +2,7 @@
     include TEMPLATES_DIR.'head.php';
     include MODULES_DIR.'add_user.php';
     
-    $kayttajaID = 
+    //$kayttajaID = 
     $user = filter_input(INPUT_POST, "username");
     $pword=filter_input(INPUT_POST, "salasana");
 

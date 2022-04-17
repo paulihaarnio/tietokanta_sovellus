@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,17 +158,19 @@
             <a class="nav-link active" aria-current="page" href="./genret.php">Genret</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./login.php">Kirjaudu sisään</a>
-            </li>
-            <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./soittolista.php">Soittolista</a>
             </li>
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./register.php">Rekisteröidy</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./logout.php">Kirjaudu ulos</a>
-            </li>
+            <?php 
+                if(isset($_SESSION["username"])){
+                    echo '<a class="nav-link bg-danger" href="./logout.php">Kirjaudu ulos</a>';
+                }else{
+                    echo '<a class="nav-link bg-success" href="./login.php">Kirjaudu sisään</a>';
+                }
+            ?>
         </ul>
         </div>
     </div>
