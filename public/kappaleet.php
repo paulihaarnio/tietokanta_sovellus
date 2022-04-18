@@ -2,9 +2,10 @@
     include TEMPLATES_DIR.'head.php';
     include MODULES_DIR.'add_kappale.php';
 
+    $userID = 2;
     //hae kaikki albumit tietokannasta
     $songs = getSongs();
-
+    $inPlaylist = songsInPlaylist($userID);
 ?>
 
     <div class="main-container">
@@ -23,8 +24,16 @@
                 foreach($songs as $s) {
                     echo "<tr><td><button id='".$s["mediaNimi"]."button' class='play' onClick=\"playPause('".$s["mediaNimi"]."')\">
                         <audio id='".$s["mediaNimi"]."' src='../media/".$s["mediaNimi"].".mp3'></audio><i id='".$s["mediaNimi"]."icon' class='bi bi-play-fill'></i></i></button></td>
-                        <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td><td><a class='buttonstyle' href='../src/modules/songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-heart'></i>Lisää soittolistaan</a></td>
-                        <td><button class='deletebtn'><i class='bi bi-trash'></i> Poista kappale</button></td></tr>";
+                        <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td><td>";
+                    
+                    if(in_array($s["kappaleID"], $inPlaylist)){
+                        echo "<a class='deletebtn' href='../src/modules/removeFromPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart-fill '></i>Poista soittolistasta</a></td>";
+                    }else {
+                        echo "<a class='deletebtn' href='../src/modules/songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart'></i>Lisää soittolistaan</a></td>";
+                    }
+                        
+
+                    echo "<td><button class='deletebtn'><i class='bi bi-trash'></i> Poista kappale</button></td></tr>";
                 }
             ?>
 

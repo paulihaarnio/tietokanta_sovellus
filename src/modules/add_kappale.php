@@ -90,3 +90,15 @@ function deleteSong($id){
         throw $e;
     }
 }
+
+function songsInPlaylist($userID){
+    $pdo = getPdoConnection();
+
+    $sql = "SELECT kappale.kappaleID FROM kappale
+            INNER JOIN soittolistarivi ON kappale.kappaleID = soittolistarivi.kappaleID
+            WHERE soittolistaID = (SELECT soittolistaID FROM soittolista WHERE kayttajaID = $userID)";
+
+    $songs = $pdo->query($sql)->fetchAll(PDO::FETCH_COLUMN);
+    foreach ($songs as $s){}
+    return $songs;
+}
