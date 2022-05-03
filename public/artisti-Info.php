@@ -5,26 +5,27 @@ include MODULES_DIR.'add_kappale.php';
 
 //pilkotaan URL palasiksi = merkin kohdalta
 $uri = parse_url(filter_input(INPUT_SERVER,'PATH_INFO'),PHP_URL_PATH);
-$parameters = explode('=',$uri);
+$parameters = explode('/',$uri);
 $id = $parameters[1];
+
 
 //haetaan tietokannasta artistit ja kappaleet
 $artist = getArtist($id);
-$songs = getSongsfromArtist($id);
 ?>
 
 <div class="main-container">
-        <h2>Artisti</h2>
-        <h4>Syntymävuosi:</h4>
+        <h2><?php foreach($artist as $a) { echo $a["artistiNimi"]; break;} ?></h2>
+        <h4>Syntymävuosi: <?php foreach($artist as $a) { echo $a["svuosi"]; break;} ?></h4>
         <table class="table table-striped">
             <tr>
-                <th>Kappaleet</th>
+                <th>Kappale</th>
+                <th>Kesto</th>
             </tr>
-            <tr><td></td></tr>
+            
 
             <?php
                 foreach($artist as $a){
-                    echo "<tr><td>".$a["artistiNimi"]."</td><td>" . "</td><td>";
+                    echo "<tr><td>".$a["kappaleNimi"]."</td><td>". $a["kesto"] . "</td><td>";
                 }
             ?>
         </table>
