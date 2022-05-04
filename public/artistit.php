@@ -23,7 +23,7 @@
 
                 foreach($artists as $artist) {
                     
-                    echo "<tr><td><a href='artisti-Info.php". "/" .$artist['artistiID']."' value=".$artist['artistiID']." id=".$artist['artistiID'].">".$artist["artistiNimi"]."</a></td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
+                    echo "<tr><td><a href='artisti-Info.php?id=" .$artist['artistiID']."' value=".$artist['artistiID']." id=".$artist['artistiID'].">".$artist["artistiNimi"]."</a></td><td>" . $artist["svuosi"]."</td><td>" . $artist["maa"]."</td></tr>";
                 }
 
             ?>
