@@ -21,7 +21,7 @@
         
 
             <?php
-                foreach($songs as $s) {
+                foreach($playlist as $s) {
                     echo "<tr><td><button id='ASong' onClick='playPause()'>
                         <audio src='../media/satulinna.mp3'></audio>&#9654;</button></td>
                         <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td></tr>";
