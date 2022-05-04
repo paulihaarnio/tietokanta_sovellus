@@ -6,6 +6,26 @@
     //hae kaikki albumit tietokannasta
     $songs = getSongs();
     $inPlaylist = songsInPlaylist($userID);
+
+    $id = $_GET['id'];
+    function console_log($output, $with_script_tags = true) {
+        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
+    ');';
+        if ($with_script_tags) {
+            $js_code = '<script>' . $js_code . '</script>';
+        }
+        echo $js_code;
+    }
+    console_log($id);
+
+    if(isset($id)) {
+        try{
+            deleteSong($id);
+            echo '<div class="alert alert-success" role="alert">Kappale poistettu!!</div>';
+        }catch(Exception $e){
+            echo '<div class="alert alert-danger" role="alert">'.$e->getMessage().'</div>';
+        }
+    }
 ?>
 
     <div class="main-container">
@@ -33,7 +53,7 @@
                     }
                         
 
-                    echo "<td><button class='deletebtn'><i class='bi bi-trash'></i> Poista kappale</button></td></tr>";
+                    echo "<td><a class='deletebtn' href='kappaleet.php?id=". $s["kappaleID"]."'><i class='bi bi-trash'></i> Poista kappale</a></td></tr>";
                 }
             ?>
 
