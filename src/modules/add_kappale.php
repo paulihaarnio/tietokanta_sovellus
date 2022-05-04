@@ -72,12 +72,12 @@ function deleteSong($id){
         $pdo = getPdoConnection();
         // Start transaction
         $pdo->beginTransaction();
-        // Delete from worktime table
-      // $sql = "DELETE FROM albumirivi WHERE kappaleID = ?";
-       // $statement = $pdo->prepare($sql);
-       // $statement->bindParam(1, $id);        
-       // $statement->execute();
-        // Delete from person table
+        // Delete from albumirivi table
+        $sql = "DELETE FROM albumirivi WHERE kappaleID = ?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(1, $id);        
+        $statement->execute();
+        // Delete from kappale table
         $sql = "DELETE FROM kappale WHERE kappaleID = ?";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(1, $id);        
