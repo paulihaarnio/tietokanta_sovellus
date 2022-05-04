@@ -5,8 +5,8 @@ function getplaylist() {
 
     try {
         $pdo = getPdoConnection();
-        $sql = "SELECT kappaleNimi, kesto, artisti.artistiNimi FROM kappale 
-        INNER JOIN artisti ON artisti.artistiID = kappale.artistiID";
+        $sql = "SELECT soittolistarivi.kappaleID, kesto, kappaleNimi, artistiNimi FROM soittolistarivi
+        INNER JOIN kappale ON soittolistarivi.kappaleID = kappale.kappaleID INNER JOIN artisti ON artisti.artistiID = kappale.artistiID";
         $songs = $pdo->query($sql);
         return $songs->fetchAll();
     } catch(PDOException $e) {
