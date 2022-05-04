@@ -2,7 +2,7 @@
     include TEMPLATES_DIR.'head.php';
     include MODULES_DIR.'add_kappale.php';
 
-    $userID = 2;
+    $userID = $_SESSION['userID'];
     //hae kaikki albumit tietokannasta
     $songs = getSongs();
     $inPlaylist = songsInPlaylist($userID);
