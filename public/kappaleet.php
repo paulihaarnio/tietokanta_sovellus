@@ -7,7 +7,7 @@
     $songs = getSongs();
     $inPlaylist = songsInPlaylist($userID);
 
-    $id = $_GET['id'];
+    $id = filter_input(INPUT_GET, "id");
     function console_log($output, $with_script_tags = true) {
         $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
     ');';
