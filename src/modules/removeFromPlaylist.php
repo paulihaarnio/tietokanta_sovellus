@@ -3,7 +3,7 @@ require_once './db.php'; // DB connection
 include '../templates/head.php';
 
 $kappaleID = $_GET['kappaleID'];
-$userID = 2;
+$userID = $_SESSION['userID'];
 
 try{
     $pdo = getPdoConnection();
