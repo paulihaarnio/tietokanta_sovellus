@@ -19,7 +19,7 @@ function login($uname, $pw){
     try{
         $pdo = getPdoConnection();
         //Haetaan käyttäjä annetulla käyttäjänimellä
-        $sql = "SELECT ktunnus, ksalasana FROM kayttaja WHERE ktunnus=?";
+        $sql = "SELECT * FROM kayttaja WHERE ktunnus=?";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(1, $uname);
         $statement->execute();
@@ -37,6 +37,7 @@ function login($uname, $pw){
 
         //Jos käyttäjä tunnistettu, talletetaan käyttäjän tiedot sessioon
         $_SESSION["username"] = $uname;
+        $_SESSION["userID"] = $row["kayttajaID"];
         
         echo '<div class="alert alert-success" role="alert">'."Tervetuloa $uname".'</div>';
     }catch(PDOException $e){
