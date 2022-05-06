@@ -2,10 +2,18 @@
     include TEMPLATES_DIR.'head.php';
     include MODULES_DIR.'add_kappale.php';
 
-    $userID = $_SESSION['userID'];
+    $loggedIn = isset($_SESSION['userID']);
+
+    if($loggedIn) {
+        $userID = $_SESSION['userID'];
+    }
+        
     //hae kaikki albumit tietokannasta
     $songs = getSongs();
-    $inPlaylist = songsInPlaylist($userID);
+
+    if($loggedIn) {
+        $inPlaylist = songsInPlaylist($userID);
+    }    
 
     $id = filter_input(INPUT_GET, "id");
 
@@ -37,12 +45,13 @@
                         <audio id='".$s["mediaNimi"]."' src='../media/".$s["mediaNimi"].".mp3'></audio><i id='".$s["mediaNimi"]."icon' class='bi bi-play-fill'></i></i></button></td>
                         <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td><td>";
                     
-                    if(in_array($s["kappaleID"], $inPlaylist)){
+                    if($loggedIn){
+                        if(in_array($s["kappaleID"], $inPlaylist)){
                         echo "<a class='deletebtn' href='../src/modules/removeFromPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart-fill '></i>Poista soittolistasta</a></td>";
-                    }else {
-                        echo "<a class='deletebtn' href='../src/modules/songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart'></i>Lisää soittolistaan</a></td>";
+                        }else {
+                            echo "<a class='deletebtn' href='../src/modules/songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart'></i>Lisää soittolistaan</a></td>";
+                        }
                     }
-                        
 
                     echo "<td><a class='deletebtn' href='kappaleet.php?id=". $s["kappaleID"]."'><i class='bi bi-trash'></i> Poista kappale</a></td></tr>";
                 }
