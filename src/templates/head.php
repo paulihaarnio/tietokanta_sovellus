@@ -63,6 +63,13 @@
             padding-left: 1em;
         }
 
+        .loginstyle {
+            font-weight: bold;
+            border-radius: 20px;
+            padding-left: 1em !important;
+            padding-right: 1em !important;
+        }
+
         .bi-suit-heart, .bi-suit-heart-fill{
             margin-right: 0.4em;
             font-size: 0.9em;
@@ -106,6 +113,12 @@
         
         .bi-suit-heart-fill {
             color: #4a78ff;
+        }
+
+        @media screen and (max-width: 991px) {
+            .btntext {
+                display: none;
+            }
         }
         
     </style>
@@ -157,11 +170,12 @@
             <li class="nav-item">
             <?php 
                 if(isset($_SESSION["username"])){
-                    echo '<a class="nav-link bg-danger" href="./logout.php">Kirjaudu ulos</a>';
+                    echo '<a class="nav-link bg-danger loginstyle" href="./logout.php">  Kirjaudu ulos</a>';
                 }else{
-                    echo '<a class="nav-link bg-success" href="./login.php">Kirjaudu sisään</a>';
+                    echo '<a class="nav-link bg-success loginstyle" href="./login.php">  Kirjaudu sisään</a>';
                 }
             ?>
+            </li>
         </ul>
         </div>
     </div>

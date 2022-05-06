@@ -17,7 +17,8 @@ if(!isset($_SESSION["username"]) && isset($uname)){
    
 }
     if(!isset($_SESSION["username"])){
-?>
+?>  
+    <div class="main-container">
     <h2>Kirjaudu sisään</h2>
     <form action="login.php" method="post">
         <label for="username">Käyttäjätunnus:</label><br>
@@ -26,6 +27,6 @@ if(!isset($_SESSION["username"]) && isset($uname)){
         <input type="password" name="salasana" id="salasana"><br>
         <input type="submit" class="btn btn-primary" value="Kirjaudu sisään">
     </form>
-
+    </div>
 
 <?php } include TEMPLATES_DIR.'foot.php'; ?>

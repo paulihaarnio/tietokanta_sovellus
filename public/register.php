@@ -17,6 +17,7 @@ if(isset($user)){
 
 
 ?>
+<div class="main-container">
 <h2>Rekisteröidy</h2>
 <form action="register.php" method="post">
         <label for="username">Käyttäjätunnus:</label><br>
@@ -25,5 +26,5 @@ if(isset($user)){
         <input type="password" name="salasana" id="salasana"><br>
         <input type="submit" class="btn btn-primary" value="Rekisteröidy">
     </form>
-
+</div>
 <?php include TEMPLATES_DIR.'foot.php';?>
