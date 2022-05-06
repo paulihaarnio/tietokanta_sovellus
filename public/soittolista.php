@@ -5,8 +5,6 @@
     //hae kaikki albumit tietokannasta
     $playlist = getPlaylist();
 
-    
-
 ?>
 
     <div class="main-container">
@@ -17,15 +15,22 @@
                 <th>Nimi</th>
                 <th>Artisti</th>
                 <th>Kesto</th>
+                <th></th>
             </tr>
         
 
             <?php
-                foreach($playlist as $s) {
-                    echo "<tr><td><button id='ASong' onClick='playPause()'>
-                        <audio src='../media/satulinna.mp3'></audio>&#9654;</button></td>
-                        <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td></tr>";
+
+                if(!isset($_SESSION['userID'])) {
+                    echo "<p style='color:#2159ff;'>Kirjaudu sisään käyttääksesi soittolistaa</p>";
+                }else {
+                    foreach($playlist as $s) {
+                        echo "<tr><td><button id='".$s["mediaNimi"]."button' class='play' onClick=\"playPause('".$s["mediaNimi"]."')\">
+                        <audio id='".$s["mediaNimi"]."' src='../media/".$s["mediaNimi"].".mp3'></audio><i id='".$s["mediaNimi"]."icon' class='bi bi-play-fill'></i></i></button></td>
+                        <td>".$s["kappaleNimi"]."</td><td>" . $s["artistiNimi"]."</td><td>" . $s["kesto"]. "</td><td><a class='deletebtn' href='../src/modules/removeFromPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart-fill '></i>Poista soittolistasta</a></td>";
+                    }
                 }
+                
             ?>
         </table>
     </div>
