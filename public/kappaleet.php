@@ -37,6 +37,7 @@
                 <th>Kesto</th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
 
             <?php
