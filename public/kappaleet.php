@@ -53,7 +53,9 @@
                         }
                     }
 
-                    echo "<td><a class='deletebtn' href='kappaleet.php?id=". $s["kappaleID"]."'><i class='bi bi-trash'></i><span class='btntext'> Poista kappale</span></a></td></tr>";
+                    echo "<td><a class='deletebtn' href='kappaleet.php?id=". $s["kappaleID"]."'><i class='bi bi-trash'></i><span class='btntext'> Poista kappale</span></a></td>";
+
+                    echo "<td><a class='deletebtn' href='kappale.php?id=". $s["kappaleID"]. '&name='. $s["kappaleNimi"] . '&time='. $s["kesto"]."'><i class='bi bi-pencil-square'></i><span class='btntext'> Muokkaa</span></a></td></tr>";
                 }
             ?>
 
