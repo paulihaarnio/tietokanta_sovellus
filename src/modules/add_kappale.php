@@ -65,7 +65,7 @@ function deleteSong($id){
     
     //Tarkistetaan onko muttujia asetettu
     if( !isset($id) ){
-        throw new Exception("Missing parameters! Cannot delete Song!");
+        throw new Exception("Kappaletta ei pystytty poistamaan!");
     }
     
     try{
@@ -99,6 +99,24 @@ function songsInPlaylist($userID){
             WHERE soittolistaID = (SELECT soittolistaID FROM soittolista WHERE kayttajaID = $userID)";
 
     $songs = $pdo->query($sql)->fetchAll(PDO::FETCH_COLUMN);
-    foreach ($songs as $s){}
     return $songs;
+}
+
+function updateSong($id, $name, $artistID, $time) {
+    require_once MODULES_DIR.'db.php'; // DB connection
+    
+    if( !isset($id) ){
+        throw new Exception("Kappaleen muokkaus ei onnistunut!");
+    }
+    
+    try{
+        $pdo = getPdoConnection();
+        
+        $sql = "UPDATE kappale SET kappaleNimi = COALESCE(NULLIF('$name', ''), kappaleNimi), artistiID = COALESCE(NULLIF('$artistID', 0), artistiID), kesto = COALESCE(NULLIF('$time', ''), kesto) WHERE kappaleID = $id";
+        $pdo->query($sql);
+        
+        
+    }catch(PDOException $e){
+        throw $e;
+    }
 }
