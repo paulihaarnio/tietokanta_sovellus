@@ -36,15 +36,22 @@
     </div>
 
     <script>
-        var aud = document.getElementById("ASong").children[0];
         var isPlaying = false;
-        aud.pause();
 
-        function playPause() {
+        function playPause(nimi) {
+
+            var aud = document.getElementById(nimi);
+            var button = document.getElementById(nimi + "button");
+            var icon = document.getElementById(nimi + "icon");
+
             if (isPlaying) {
             aud.pause();
+            icon.classList.remove("bi-pause-fill");
+            icon.classList.add("bi", "bi-play-fill");
             } else {
             aud.play();
+            icon.classList.remove("bi-play-fill");
+            icon.classList.add("bi-pause-fill");
             }
             isPlaying = !isPlaying;
         }
