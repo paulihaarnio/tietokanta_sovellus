@@ -5,7 +5,7 @@ function getAlbums() {
 
     try {
         $pdo = getPdoConnection();
-        $sql = "SELECT albumiNimi, tekovuosi, artisti.artistiNimi, tuottaja, genreNimi FROM albumi 
+        $sql = "SELECT albumiNimi, tekovuosi, artisti.artistiNimi, albumi.artistiID, tuottaja, genreNimi FROM albumi 
         INNER JOIN artisti ON artisti.artistiID = albumi.artistiID
         INNER JOIN genre ON genre.genreID = albumi.genreID";
         $albums = $pdo->query($sql);
