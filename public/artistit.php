@@ -40,7 +40,7 @@
 
                     echo "<td><a class='deletebtn' href='artistit.php?id=". $artist["artistiID"]."'><i class='bi bi-trash'></i><span class='btntext'> Poista artisti</span></a></td>";
 
-                    echo "<td><a class='deletebtn' href='artisti.php?id=". $artist["artistiID"]. '&year='. $artist["svuosi"] . '&country='. $artist["maa"]."'><i class='bi bi-pencil-square'></i><span class='btntext'> Muokkaa</span></a></td></tr>";
+                    echo "<td><a class='deletebtn' href='artisti.php?id=". $artist["artistiID"]. '&name='. $artist["artistiNimi"] .'&year='. $artist["svuosi"] . '&country='. $artist["maa"]."'><i class='bi bi-pencil-square'></i><span class='btntext'> Muokkaa</span></a></td></tr>";
                 }
 
             ?>
