@@ -9,7 +9,7 @@ $artist = getArtist($id);
 ?>
 
 <div class="main-container">
-        <a href="../artistit.php">Takaisin</a>
+        <a href="javascript:history.back()">Takaisin</a>
         <h2><?php foreach($artist as $a) { echo $a["artistiNimi"]; break;} ?></h2>
         <h4>Syntymävuosi: <?php foreach($artist as $a) { echo $a["svuosi"]; break;} ?></h4>
         <table class="table table-striped">
