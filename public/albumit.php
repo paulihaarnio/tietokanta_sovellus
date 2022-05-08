@@ -20,7 +20,7 @@
 
             <?php
                 foreach($albums as $a) {
-                    echo "<tr><td>".$a["albumiNimi"]."</td><td>" . $a["tekovuosi"]."</td><td>" . $a["artistiNimi"]."</td><td>" . $a["genreNimi"]."</td><td>" . $a["tuottaja"]. "</td></tr>";
+                    echo "<tr><td>".$a["albumiNimi"]."</td><td>" . $a["tekovuosi"]."</td><td><a href='artisti-Info.php?id=" .$a['artistiID']."' value=".$a['artistiID']." id=".$a['artistiID'].">" . $a["artistiNimi"]."</td><td>" . $a["genreNimi"]."</td><td>" . $a["tuottaja"]. "</td></tr>";
                 }
 
             ?>
