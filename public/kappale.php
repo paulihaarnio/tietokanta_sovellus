@@ -23,7 +23,7 @@ include MODULES_DIR.'add_kappale.php';
 
         <div class="main-container">
             <h1>Kappaleen muokkaus</h1>
-            <form action="muokkaa.php?id=<?php echo $songIDFromUrl; ?>" method="post">
+            <form action="kappale.php?id=<?php echo $songIDFromUrl; ?>" method="post">
                 <label class="dropdown">Artisti <?php createArtistDropdown($selectedID); ?></label>
                 <label>Kappaleen nimi</label>
                 <input type="text" name="kappaleNimi" placeholder="<?php echo $songNameUrl; ?>">
