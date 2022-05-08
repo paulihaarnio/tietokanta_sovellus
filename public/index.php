@@ -4,8 +4,8 @@ include('../src/templates/head.php');
 ?>
 
 <div class="main-container">
-<h1>Tietokantasovellus</h1>
-<p>Suunnitelma musiikkisovellukselle. Tehdään PHP ei Reactia. Sovelluksessa tulee näkyä/ominaisuudet: kappale, artisti, tuottaja, mahdollisuus tehdä soittolista, mahdollisuus lisätä, päivittää, lukea ja poistaa tietoja tietokannasta.</p>
+<h1>Musiikkisovellus</h1>
+<p>Sovelluksessa voit lisätä tietokantaan uusia artisteja, kappaleita, albumeita ja genrejä. <br> Kappaleet-sivulla voit lisätä mieleiset kappaleet omalle soittolistallesi sekä muokata kappaleiden tietoja tai poistaa ne kokonaan tietokannasta. </p>
 </div>
 
 <?php
