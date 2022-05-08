@@ -2,8 +2,8 @@
 include TEMPLATES_DIR.'head.php';
 include MODULES_DIR.'authorization.php';
 
-$uname = filter_input(INPUT_POST, "username");
-$pw = filter_input(INPUT_POST, "salasana");
+$uname = filter_input(INPUT_POST, "username", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$pw = filter_input(INPUT_POST, "salasana", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 if(!isset($_SESSION["username"]) && isset($uname)){
 

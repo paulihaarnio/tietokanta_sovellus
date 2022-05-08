@@ -4,12 +4,12 @@ include TEMPLATES_DIR.'dropdown.php';
 include MODULES_DIR.'add_kappale.php';
 
     $artistID = filter_input(INPUT_POST, "artisti", FILTER_SANITIZE_NUMBER_INT);
-    $songName = filter_input(INPUT_POST, "kappaleNimi");
-    $time = filter_input(INPUT_POST, "kesto");
-    $songIDFromUrl = filter_input(INPUT_GET, "id");
+    $songName = filter_input(INPUT_POST, "kappaleNimi", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $time = filter_input(INPUT_POST, "kesto", FILTER_SANITIZE_SPECIAL_CHARS);
+    $songIDFromUrl = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
     $selectedID = isset($artistID) ? $artistID : 0;
-    $songNameUrl = filter_input(INPUT_GET, "name");
-    $timeFromUrl = filter_input(INPUT_GET, "time");
+    $songNameUrl = filter_input(INPUT_GET, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $timeFromUrl = filter_input(INPUT_GET, "time", FILTER_SANITIZE_SPECIAL_CHARS);
 
     if(isset($songIDFromUrl)) {
         try {

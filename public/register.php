@@ -3,8 +3,8 @@
     include MODULES_DIR.'add_user.php';
     
     //$kayttajaID = 
-    $user = filter_input(INPUT_POST, "username");
-    $pword=filter_input(INPUT_POST, "salasana");
+    $user = filter_input(INPUT_POST, "username", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $pword=filter_input(INPUT_POST, "salasana", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 if(isset($user)){
     try {
