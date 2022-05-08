@@ -60,3 +60,58 @@ function addArtist($name, $year, $country) {
         echo $e->getMessage();
     }
 }
+
+function deleteArtist($id){
+    require_once MODULES_DIR.'db.php'; // DB connection
+    
+    //Tarkistetaan onko muttujia asetettu
+    if( !isset($id) ){
+        throw new Exception("Artistia ei pystytty poistamaan!");
+    }
+    
+    try{
+        $pdo = getPdoConnection();
+        // Start transaction
+        $pdo->beginTransaction();
+        // Delete from albumi table
+        $sql = "DELETE FROM albumi WHERE artistiID = ?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(1, $id);        
+        $statement->execute();
+        // Delete from kappale table
+        $sql = "DELETE FROM kappale WHERE artistiID = ?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(1, $id);        
+        $statement->execute();
+        // Delete from artisti table
+        $sql = "DELETE FROM artisti WHERE artistiID = ?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(1, $id);        
+        $statement->execute();
+        // Commit transaction
+        $pdo->commit();
+    }catch(PDOException $e){
+        // Rollback transaction on error
+        $pdo->rollBack();
+        throw $e;
+    }
+}
+
+function updateArtist($id, $name, $year, $country) {
+    require_once MODULES_DIR.'db.php'; // DB connection
+    
+    if( !isset($id) ){
+        throw new Exception("Artistin muokkaus ei onnistunut!");
+    }
+    
+    try{
+        $pdo = getPdoConnection();
+        
+        $sql = "UPDATE artisti SET artistiNimi = COALESCE(NULLIF('$name', ''), artistiNimi), svuosi = COALESCE(NULLIF('$year', 0), svuosi), maa = COALESCE(NULLIF('$country', ''), maa) WHERE artistiID = $id";
+        $pdo->query($sql);
+        
+        
+    }catch(PDOException $e){
+        throw $e;
+    }
+}
