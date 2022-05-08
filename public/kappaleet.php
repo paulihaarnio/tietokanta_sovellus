@@ -48,9 +48,9 @@
                     
                     if($loggedIn){
                         if(in_array($s["kappaleID"], $inPlaylist)){
-                        echo "<a class='deletebtn' href='../src/modules/removeFromPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart-fill '></i><span class='btntext'>Poista soittolistasta</span></a></td>";
+                        echo "<a class='deletebtn' href='removeFromPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart-fill '></i><span class='btntext'>Poista soittolistasta</span></a></td>";
                         }else {
-                            echo "<a class='deletebtn' href='../src/modules/songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart'></i><span class='btntext'>Lisää soittolistaan</span></a></td>";
+                            echo "<a class='deletebtn' href='songToPlaylist.php?kappaleID=".$s["kappaleID"]."'><i class='bi bi-suit-heart'></i><span class='btntext'>Lisää soittolistaan</span></a></td>";
                         }
                     }
 

@@ -1,6 +1,6 @@
 <?php
-require_once './db.php'; // DB connection
-include '../templates/head.php';
+require_once MODULES_DIR.'db.php'; // DB connection
+include TEMPLATES_DIR.'head.php';
 
 $kappaleID = $_GET['kappaleID'];
 $userID = $_SESSION['userID'];
@@ -33,5 +33,5 @@ try{
     echo '<br><button class="buttonstyle" onclick="javascript:history.back()">Takaisin</button></div>';
 }
 
-include '../templates/foot.php';
+include TEMPLATES_DIR.'foot.php';
 ?>
