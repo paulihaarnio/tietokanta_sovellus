@@ -4,7 +4,7 @@ include MODULES_DIR.'add_genre.php';
 
 //Filtteroidaan POST-inputit (ei käytetä string-filtteriä, koska deprekoitunut)
     //Jos parametria ei löydy, funktio palauttaa null
-    $name = filter_input(INPUT_POST, "nimi");
+    $name = filter_input(INPUT_POST, "nimi", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     if(isset($name)) {
         try{

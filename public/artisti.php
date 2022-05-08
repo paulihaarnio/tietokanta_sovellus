@@ -4,14 +4,14 @@ include MODULES_DIR.'add_artisti.php';
 
 //Filtteroidaan POST-inputit (ei käytetä string-filtteriä, koska deprekoitunut)
     //Jos parametria ei löydy, funktio palauttaa null
-    $name = filter_input(INPUT_POST, "nimi");
-    $year = filter_input(INPUT_POST, "svuosi");
-    $country = filter_input(INPUT_POST, "maa");
+    $name = filter_input(INPUT_POST, "nimi", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $year = filter_input(INPUT_POST, "svuosi", FILTER_SANITIZE_NUMBER_INT);
+    $country = filter_input(INPUT_POST, "maa", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    $artistIDFromUrl = filter_input(INPUT_GET, "id");
-    $nameUrl = filter_input(INPUT_GET, "name");
-    $yearUrl = filter_input(INPUT_GET, "year");
-    $countryUrl = filter_input(INPUT_GET, "country");
+    $artistIDFromUrl = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
+    $nameUrl = filter_input(INPUT_GET, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $yearUrl = filter_input(INPUT_GET, "year", FILTER_SANITIZE_NUMBER_INT);
+    $countryUrl = filter_input(INPUT_GET, "country", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     if(isset($artistIDFromUrl)) {
         try {

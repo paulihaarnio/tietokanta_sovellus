@@ -5,9 +5,9 @@ include MODULES_DIR.'add_albumi.php';
 
     $artistID = filter_input(INPUT_POST, "artisti", FILTER_SANITIZE_NUMBER_INT);
     $genreID = filter_input(INPUT_POST, "genre", FILTER_SANITIZE_NUMBER_INT);
-    $albumName = filter_input(INPUT_POST, "albumiNimi");
-    $year = filter_input(INPUT_POST, "vuosi");
-    $producer = filter_input(INPUT_POST, "tuottaja");
+    $albumName = filter_input(INPUT_POST, "albumiNimi", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $year = filter_input(INPUT_POST, "vuosi", FILTER_SANITIZE_NUMBER_INT);
+    $producer = filter_input(INPUT_POST, "tuottaja", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     if(isset($artistID) || isset($genreID)) {
         try {

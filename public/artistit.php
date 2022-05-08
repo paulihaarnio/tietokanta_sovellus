@@ -6,7 +6,7 @@
     //hae kaikki artistit tietokannasta
     $artists = getArtists();
 
-    $id = filter_input(INPUT_GET, "id");
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
     if(isset($id)) {
         try{

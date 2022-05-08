@@ -2,7 +2,7 @@
 include TEMPLATES_DIR.'head.php';
 include MODULES_DIR.'add_artisti.php';
 
-$id = filter_input(INPUT_GET, "id");
+$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 //haetaan tietokannasta artistit ja kappaleet
 $artist = getArtist($id);
