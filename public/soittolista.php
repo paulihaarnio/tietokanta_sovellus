@@ -2,8 +2,11 @@
     include TEMPLATES_DIR.'head.php';
     include MODULES_DIR.'add_playlist.php';
 
-    $userID = $_SESSION['userID'];
-    $playlist = getPlaylist($userID);
+    if(isset($_SESSION['userID'])) {
+        $userID = $_SESSION['userID'];
+        $playlist = getPlaylist($userID);
+    }
+    
 
 ?>
 
@@ -21,7 +24,7 @@
 
             <?php
 
-                if(!isset($_SESSION['userID'])) {
+                if(!isset($userID)) {
                     echo "<p style='color:#2159ff;'>Kirjaudu sisään käyttääksesi soittolistaa</p>";
                 }else {
                     foreach($playlist as $s) {
