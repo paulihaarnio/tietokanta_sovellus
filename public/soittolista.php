@@ -2,8 +2,8 @@
     include TEMPLATES_DIR.'head.php';
     include MODULES_DIR.'add_playlist.php';
 
-    //hae kaikki albumit tietokannasta
-    $playlist = getPlaylist();
+    $userID = $_SESSION['userID'];
+    $playlist = getPlaylist($userID);
 
 ?>
 
